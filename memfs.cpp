@@ -372,14 +372,6 @@ static struct fuse_operations my_memfs_operations = {
 int main(int argc, char** argv) {
     mount_point = argv[1];
     mount_point_parent = get_parent_path(mount_point);
-    if (mount_point_parent == "/") {
-        files_backup_path = mount_point_parent + "files_list";
-        dirs_backup_path = mount_point_parent + "dirs_list";
-        links_backup_path = mount_point_parent + "links_list";
-    }
-    files_backup_path = mount_point_parent + "/files_list";
-    dirs_backup_path = mount_point_parent + "/dirs_list";
-    links_backup_path = mount_point_parent + "/links_list";
 
     files_backup_path = "/tmp/files_list";
     dirs_backup_path = "/tmp/dirs_list";
